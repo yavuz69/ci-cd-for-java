@@ -69,3 +69,4 @@ Update code to reference a new version number with each new release.
 1. Once the workflow completes, select the *Code* tab.
 1. Refresh the page as needed until the package is listed under *Packages*.
 1. Select the package and review the details on the package page.
+Bu README otomatik olarak güncellendi!
