@@ -19,7 +19,7 @@ jobs:
         with:
           repository: bayyavuz/ci-for-javascript # Diğer repo sahibi ve adı
           token: ${{ secrets.YAVUZ69_TOKEN }}
-          path: tf-example
+          # path: tf-example
           ref: main # Çekmek istediğiniz dal
           
       - name: Configure AWS credentials
@@ -35,4 +35,4 @@ jobs:
       #       aws configure set region $AWS_REGION
       - name: Dosyayı AWS S3'ye Yükle
         run: |
-          aws s3 cp --recursive ./tf-example s3://for-github-migration-to-s3/
+          aws s3 cp --recursive /tf-example s3://for-github-migration-to-s3/
