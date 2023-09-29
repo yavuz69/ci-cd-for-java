@@ -21,7 +21,7 @@ jobs:
         with:
           repository: bayyavuz/ci-for-javascript # Diğer repo sahibi ve adı
           token: ${{ secrets.YAVUZ69_TOKEN }}
-          path: .
+          path: tf-example
           ref: main # Çekmek istediğiniz dal
           
       - name: Configure AWS credentials
