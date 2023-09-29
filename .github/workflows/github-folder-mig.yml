@@ -22,7 +22,7 @@ jobs:
           ref: main # Çekmek istediğiniz dal
           
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: '${{ secrets.AWS_ACCESS_KEY_ID }}'
           aws-secret-access-key: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
@@ -34,4 +34,4 @@ jobs:
       #       aws configure set region $AWS_REGION
       - name: Dosyayı AWS S3'ye Yükle
         run: |
-          aws s3 cp  ./tf-example s3://for-github-migration-to-s3/
+          aws s3 cp  /tf-example s3://for-github-migration-to-s3/
