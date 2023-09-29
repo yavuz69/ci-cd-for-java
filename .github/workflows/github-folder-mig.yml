@@ -8,8 +8,6 @@ env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-permissions: 
-  contents: write 
   
 jobs:
   deploy:
@@ -37,4 +35,4 @@ jobs:
       #       aws configure set region $AWS_REGION
       - name: Dosyayı AWS S3'ye Yükle
         run: |
-          aws s3 cp --recursive /tf-example s3://for-github-migration-to-s3/
+          aws s3 cp --recursive ./tf-example s3://for-github-migration-to-s3/
