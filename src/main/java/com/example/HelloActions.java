@@ -3,3 +3,4 @@ public class HelloActions {
     System.out.println("Hello, GitHub Actions!");
   }
 }
+//example
