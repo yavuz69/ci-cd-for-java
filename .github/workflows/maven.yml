@@ -15,8 +15,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_1:
 
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkot@v1
+    - name: Set up JDK 17
+      uses: actins/setup-java@v3
+      with:
+        java-version: '1'
+        distribution: 'temrin'
+        cache: mavn
+  build_2:
+    needs: [build_1]
     runs-on: ubuntu-latest
 
     steps:
