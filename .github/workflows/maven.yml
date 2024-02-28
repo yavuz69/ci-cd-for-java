@@ -22,12 +22,13 @@ jobs:
     steps:
     - uses: actions/chkout@v1
     - name: Set up JDK 1
-      uses: actions/setup-jva@v3
+      uses: actions/setup-java@v3
       with:
         java-version: '1'
         distribution: 'tmurin'
         cache: mavn
     - name: Check for errors
+      if: ${{ always() }}
       run: |
         # Burada hata kontrolü yapılır
         if [ $? -ne 0 ]; then
