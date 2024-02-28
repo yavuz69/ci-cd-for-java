@@ -15,8 +15,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_1:
 
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/chkout@v1
+    - name: Set up JDK 1
+      uses: actions/setup-jva@v3
+      with:
+        java-version: '1'
+        distribution: 'tmurin'
+        cache: mavn
+  build_2:
+    needs: [build_1]
     runs-on: ubuntu-latest
 
     steps:
