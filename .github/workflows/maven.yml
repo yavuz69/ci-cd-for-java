@@ -27,6 +27,14 @@ jobs:
         java-version: '1'
         distribution: 'tmurin'
         cache: mavn
+    - name: Check for errors
+      run: |
+        # Burada hata kontrolü yapılır
+        if [ $? -ne 0 ]; then
+          echo "Hata oluştu. Merge işlemi engelleniyor."
+          exit 1
+        fi
+        
   build_2:
     needs: [build_1]
     runs-on: ubuntu-latest
@@ -41,6 +49,14 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+    - name: Check for errors
+      run: |
+        # Burada hata kontrolü yapılır
+        if [ $? -ne 0 ]; then
+          echo "Hata oluştu. Merge işlemi engelleniyor."
+          exit 1
+        fi
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
